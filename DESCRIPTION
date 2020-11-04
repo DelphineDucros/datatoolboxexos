@@ -16,4 +16,10 @@ RoxygenNote: 7.1.0
 Imports: 
     here,
     readr,
-    magrittr
+    magrittr,
+    dplyr,
+    ggplot2,
+    forcats,
+    sf,
+    drake,
+    fishualize

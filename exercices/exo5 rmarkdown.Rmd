@@ -36,7 +36,6 @@ library(tidyverse)
 ```
 
 
-
 ```{r}
 pantheria <- readr::read_delim(here::here("data/pantheria-traits/PanTHERIA_1-0_WR05_Aug2008.txt"), delim = "\t")
 ```
@@ -76,8 +75,14 @@ pantheria_rs
 
 # cette fonction appartient au package dplyr
 
-pantheria_rsNA <- pantheria_rs %>%
+pantheria_rsNA1 <- pantheria_rs %>%
   mutate(Max_longevity = na_if(Max_longevity, "-999"))
+  
+  pantheria_rsNA2 <- pantheria_rsNA1 %>%
+  mutate(HR_indiv = na_if(HR_indiv, "-999"))
+  
+  pantheria_rsNA3 <- pantheria_rsNA2 %>%
+  mutate(Litters_per_year = na_if(Litters_per_year, "-999"))
 
 pantheria_rsNA
 
